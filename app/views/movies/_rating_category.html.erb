@@ -1,0 +1,8 @@
+<p>
+  <b>Ratings – <%= movie.score %></b>
+  
+  <br/>
+  <% Rating::CATEGORY.each do |category, _| %>
+    <span>[<%= category.to_s.humanize.titleize %> – <%= movie.category_score(category) %>]</span>
+  <% end %>
+</p>

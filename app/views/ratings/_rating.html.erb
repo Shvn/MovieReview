@@ -1,0 +1,19 @@
+<div id="<%= dom_id rating %>">
+  <span>
+    <i>Rating#<%= "#{rating.id}" %></i>
+    –
+    <span title="Rating"><%= "#{rating.score}" %></span>
+  </span>
+
+  <table>
+    <tbody>
+      <% rating.categories.each do |category, score| %>
+        <tr>
+          <td scope="row"><%= rating.get_category_type(category) %></td>
+          <td>: <%= score %></td>
+        </tr>
+      <% end %> 
+    </tbody>
+  </table>
+  <br/>
+</div>

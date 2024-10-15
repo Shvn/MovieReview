@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ratings</h1>
+
+<div id="ratings">
+  <% @ratings.each do |rating| %>
+    <%= render rating %>
+  <% end %>
+</div>
+
+<span><%= @movie.name %> |</span>
+<%= link_to "Back to movie", movie_path(@movie) %>

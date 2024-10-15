@@ -5,8 +5,10 @@
 <div id="movies">
   <% @movies.each do |movie| %>
     <%= render movie %>
+    <%= render "rating_category", movie: movie %>
     <p>
       <%= link_to "Show this movie", movie %>
+      <%= link_to "Rate this movie", new_movie_rating_path(movie) %>
     </p>
   <% end %>
 </div>
