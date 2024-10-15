@@ -1,0 +1,24 @@
+<div id="<%= dom_id rating %>">
+  <span>
+    <i>Rating#<%= "#{rating.id}" %></i>
+    –
+    <span title="Average Rating"><%= "#{rating.average_score}" %></span>
+  </span>
+
+  <table>
+    <tbody>
+      <% rating.category_ratings.each do |cr| %>
+        <tr>
+          <td scope="row"><%= cr.category.name %></td>
+          <td>: <%= cr.score %></td>
+        </tr>
+      <% end %> 
+    </tbody>
+    <tfoot>
+      <tr>
+        <td><small><%= I18n.l(rating.created_at) %></small></td>
+      </tr>
+    </tfoot>
+  </table>
+  <br/>
+</div>

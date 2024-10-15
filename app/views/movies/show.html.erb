@@ -8,3 +8,13 @@
 
   <%= button_to "Destroy this movie", @movie, method: :delete %>
 </div>
+
+<%= render "category_rating", movie: @movie %>
+
+<div id="ratings">
+  <% @movie.ratings.order_desc.each do |rating| %>
+    <%= render rating %>
+  <% end %>
+</div>
+
+<%= link_to "New rating", new_movie_rating_path(@movie) %>

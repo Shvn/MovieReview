@@ -1,0 +1,9 @@
+<p>
+  <b>Ratings – <%= movie.overall_score %></b>
+  
+  <br/>
+
+  <% movie.category_score&.each do |name, score| %>
+    <span>[<%= name %>: <%= score %>]</span>
+  <% end %>
+</p>
